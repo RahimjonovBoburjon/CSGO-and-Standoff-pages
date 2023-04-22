@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <div class="sign">
+                            <h6 class="mb-0 pb-3"><span class="title-sign-in">ВОЙТИ</span><span class="title-sign-up">ЗАРЕГИСТРИРОВАТЬСЯ</span></h6>
+                        </div>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">ВОЙТИ</h4>
+                                            <div class="form-group">
+                                                <input type="email" name="logemail" class="form-style emailform1"
+                                                    placeholder="Ваш адрес электронной почты" id="logemail" autocomplete="off">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style passwordform1"
+                                                    placeholder="Ваш пароль" id="logpass" autocomplete="off">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <p class="text form-1">Ошибка в логине или ошибка в пароле. Пожалуйста, попробуйте еще раз!</p>
+                                            <btn class="btn1 btn mt-4">ВОЙТИ</btn>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">ЗАРЕГИСТРИРОВАТЬСЯ</h4>
+                                            <div class="form-group">
+                                                <input type="text" name="logname" class="form-style nameform2"
+                                                    placeholder="Ваше ник" id="logname" autocomplete="off">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="email" name="logemail" class="form-style emailform2"
+                                                    placeholder="Ваш адрес электронной почты" id="logemail" autocomplete="off">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style passwordform2"  
+                                                    placeholder="Ваш пароль" id="logpass" autocomplete="off">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <p class="text form-2">Пожалуйста, напишите ник полностью или введите правильно логин и пароль! </p>
+                                            <btn class="btn2 btn mt-4">ЗАРЕГИСТРИРОВАТЬСЯ</btn>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
