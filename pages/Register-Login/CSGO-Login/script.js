@@ -1,4 +1,5 @@
-const subtitle = document.querySelector(".text");
+const subtitle1 = document.querySelector(".form-1");
+const subtitle2 = document.querySelector(".form-2");
 const emailform1 = document.querySelector(".emailform1");
 const passwordform1 = document.querySelector(".passwordform1");
 const btn1 = document.querySelector(".btn1");
@@ -8,56 +9,64 @@ const passwordform2 = document.querySelector(".passwordform2");
 const btn2 = document.querySelector(".btn2");
 let validate = false;
 
-const EmailRegas = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+const validateForm1 = function () {
+    const EmailRegas = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
+    if (emailform1.value.match(EmailRegas) && passwordform1.value.length > 3) {
+        subtitle1.style.display = `none`;
+        validate = true;
+        localStorage.setItem('Login-CSGO:', emailform1.value);
+        localStorage.setItem('Password-CSGO:', passwordform1.value);
+        function openPage() {
+            window.location.href = '../../../index.html';
+        };
+        openPage();
+    } else {
+        subtitle1.style.display = `flex`;
+        validate = false;
+    };
+};
 
 btn1.addEventListener("click", () => {
-    if (emailform1.value.length > 3 && passwordform1.value.length > 3) {
-        subtitle.style.display = `none`;
+    validateForm1();
+});
+
+const validateForm2 = function () {
+    const EmailRegas = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+    if (nameform2.value.length > 3 && emailform2.value.match(EmailRegas) && passwordform2.value.length > 3) {
+        subtitle2.style.display = `none`;
         validate = true;
-        localStorage.setItem('Login:', emailform1.value);
-        localStorage.setItem('Password:', passwordform1.value);
-        console.log(validate);
+        localStorage.setItem('Name-CSGO:', nameform2.value);
+        localStorage.setItem('Login-CSGO:', emailform2.value);
+        localStorage.setItem('Password-CSGO:', passwordform2.value);
+        function openPage() {
+            window.location.href = '../../../index.html';
+        };
+        openPage();
     } else {
-        subtitle.style.display = `flex`;
+        subtitle2.style.display = `flex`;
         validate = false;
-        console.log(validate);
-    }
-})
+    };
+};
 
 btn2.addEventListener("click", () => {
-    if (emailform2.value.length > 3 && passwordform1.value.length > 3) {
-        subtitle.style.display = `none`;
-        validate = "true"
-    } else {
-        subtitle.style.display = `flex`;
-        validate = "false"
-    }
-})
-
-// const validateForm = function () {
-//     if (emailform1.match(EmailRegas) && passwordform1.value.length > 3) {
-//         subtitle.style.display = `none`;
-//         return true
-//     } else {
-//         subtitle.style.display = `flex`;
-//         return false
-//     }
-// }
+    validateForm2();
+});
 
 // btn1.addEventListener("click", () => {
-//     const validate = validateForm()
-// })
-
-
-// btn1.addEventListener("click", () => {
-//     if (emailform1.match(EmailRegas) && passwordform1.value.length > 3) {
+//     if (emailform1.value.length > 3 && passwordform1.value.length > 3) {
 //         subtitle.style.display = `none`;
-//         validate = "true"
+//         validate = true;
+//         localStorage.setItem('Login:', emailform1.value);
+//         localStorage.setItem('Password:', passwordform1.value);
+//         function openPage() {
+//             window.location.href = '../../../index.html';
+//         };
+//         openPage();
 //     } else {
 //         subtitle.style.display = `flex`;
-//         validate = "false"
-//         console.log(emailform1.value);
+//         validate = false;
 //     }
 // })
 
