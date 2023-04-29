@@ -40,7 +40,7 @@ const validateForm2 = function () {
         localStorage.setItem('Name-Standoff:', nameform2.value);
         localStorage.setItem('Login-Standoff:', emailform2.value);
         localStorage.setItem('Password-Standoff:', passwordform2.value);
-        function openPage() {
+        function openPage() {   
             window.location.href = '../../../index.html';
         };
         openPage();
