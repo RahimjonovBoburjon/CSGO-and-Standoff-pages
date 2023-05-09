@@ -18,7 +18,7 @@ const validateForm1 = function () {
         localStorage.setItem('Login-CSGO:', emailform1.value);
         localStorage.setItem('Password-CSGO:', passwordform1.value);
         function openPage() {
-            window.location.href = '../../../index.html';
+            window.location.href = '../../CSGO-Skins';
         };
         openPage();
     } else {
@@ -41,7 +41,7 @@ const validateForm2 = function () {
         localStorage.setItem('Login-CSGO:', emailform2.value);
         localStorage.setItem('Password-CSGO:', passwordform2.value);
         function openPage() {
-            window.location.href = '../../../index.html';
+            window.location.href = '../../CSGO-Skins';
         };
         openPage();
     } else {
