@@ -41,7 +41,7 @@ a {
 body {
   /*max-width: 1899px;*/
   min-width: 522px;
-  background: #000;
+  background: #000434;
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
 }
@@ -276,6 +276,29 @@ body {
   transition: 900ms;
 }
 
+.coins {
+  color: #FEC62D;
+  font-size: 20px;
+  padding-right: 50px;
+}
+
+.link-coin {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #58A9A5;
+  opacity: 0.6;
+}
+
+.block-list {
+  background-color: #fff;
+  padding-inline: 20px;
+  border-radius: 50px;
+  margin-bottom: 2%;
+  margin-inline: 20px;
+}
+
 .link-1:hover::after {
   width: 100%;
   background: #FEC62D;
@@ -285,6 +308,114 @@ body {
   font-family: Cyber;
   src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
   font-display: swap;
+}
+
+/* BTN SIGN */
+
+.steam {
+  padding-right: 10px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+}
+
+.btn-3 {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+
+}
+
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-3:hover:before {
+  height: 100%;
+}
+
+.btn-3:hover:after {
+  width: 100%;
+}
+
+.btn-3 span:hover {
+  color: rgba(2, 126, 251, 1);
+}
+
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3 span:hover:before {
+  height: 100%;
+}
+
+.btn-3 span:hover:after {
+  width: 100%;
 }
 
 /* NEON */
@@ -349,7 +480,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -361,6 +492,21 @@ body {
   box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   cursor: pointer;
   transition: 0.4s;
+}
+
+.cards {
+  border: 1px solid #0317fc;
+  background-color: #000321;
+}
+
+.text {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #969696;
+  padding: 20px;
 }
 
 .card .card_image {
