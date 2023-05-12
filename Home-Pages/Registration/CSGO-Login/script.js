@@ -15,8 +15,8 @@ const validateForm1 = function () {
     if (emailform1.value.match(EmailRegas) && passwordform1.value.length > 3) {
         subtitle1.style.display = `none`;
         validate = true;
-        localStorage.setItem('Login-CSGO:', emailform1.value);
-        localStorage.setItem('Password-CSGO:', passwordform1.value);
+        localStorage.setItem('LoginCSGO', emailform1.value);
+        localStorage.setItem('PasswordCSGO', passwordform1.value);
         function openPage() {
             window.location.href = '../../CSGO-Skins';
         };
@@ -37,9 +37,9 @@ const validateForm2 = function () {
     if (nameform2.value.length > 3 && emailform2.value.match(EmailRegas) && passwordform2.value.length > 3) {
         subtitle2.style.display = `none`;
         validate = true;
-        localStorage.setItem('Name-CSGO:', nameform2.value);
-        localStorage.setItem('Login-CSGO:', emailform2.value);
-        localStorage.setItem('Password-CSGO:', passwordform2.value);
+        localStorage.setItem('NameCSGO', nameform2.value);
+        localStorage.setItem('LoginCSGO', emailform2.value);
+        localStorage.setItem('PasswordCSGO', passwordform2.value);
         function openPage() {
             window.location.href = '../../CSGO-Skins';
         };
