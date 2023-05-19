@@ -7,6 +7,13 @@ const btnSteam = document.querySelector(".btn-3");
 const btnUser = document.querySelector(".btn-15");
 const title = document.querySelector(".new-text");
 const logout = document.querySelector(".logout");
+const coins = document.querySelector(".block-list")
+// Send Messege
+const userName = document.querySelector(".name")
+const userMessege = document.querySelector(".messege")
+const sendMessege = document.querySelector(".btn-contact")
+const token = "6046178440:AAHUC9l6HTPjtggXqEbo-aO8CyCDv6LKmqA"
+const admin = 5189048174
 
 btn.addEventListener("click", () => {
     nav.classList.toggle("open");
@@ -32,12 +39,17 @@ btnSign.addEventListener("click", () => {
 
 
 const newText = function () {
-    if (localStorage.getItem('NameCSGO').length > 0 && localStorage.getItem('LoginCSGO').length > 0) {
-        title.textContent = localStorage.getItem('NameCSGO');
-        btnUser.style.display = 'flex';
-        btnSteam.style.display = 'none';
-    } else {
-        console.log("true");
+    try {
+        if (localStorage.getItem('NameCSGO').length > 0 && localStorage.getItem('LoginCSGO').length > 0) {
+            title.textContent = localStorage.getItem('NameCSGO');
+            btnUser.style.display = 'flex';
+            coins.style.display = 'flex';
+            btnSteam.style.display = 'none';
+        } else {
+            console.log("true");
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 
@@ -48,4 +60,22 @@ logout.addEventListener("click", () => {
     delete localStorage.LoginCSGO;
     delete localStorage.PasswordCSGO;
     location.reload();
+})
+
+sendMessege.addEventListener("click", async (e) => {
+    e.preventDefault()
+    try {
+        if (userName.value.length > 0 && userMessege.value.length > 0) {
+            const messege = `User Messege: %0A <strong> 👤 User name: </strong> ${userName.value} %0A <strong> 📧 User Messege: </strong> ${userMessege.value}`;
+            await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${admin}&text=${messege}&parse_mode=html`);
+            sendMessege.textContent = `✅ Send`;
+            userName.value = "";
+            userMessege.value = "";
+        } else {
+            sendMessege.textContent = `❌ Send`
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
 })
