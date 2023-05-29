@@ -7,13 +7,14 @@ const btnSteam = document.querySelector(".btn-3");
 const btnUser = document.querySelector(".btn-15");
 const title = document.querySelector(".new-text");
 const logout = document.querySelector(".logout");
-const coins = document.querySelector(".block-list")
+const coins = document.querySelector(".block-list");
+const numberCoins = document.querySelector(".link-coin");
 // Send Messege
-const userName = document.querySelector(".name")
-const userMessege = document.querySelector(".messege")
-const sendMessege = document.querySelector(".btn-contact")
-const token = "6046178440:AAHUC9l6HTPjtggXqEbo-aO8CyCDv6LKmqA"
-const admin = 5189048174
+const userName = document.querySelector(".name");
+const userMessege = document.querySelector(".messege");
+const sendMessege = document.querySelector(".btn-contact");
+const token = "6046178440:AAHUC9l6HTPjtggXqEbo-aO8CyCDv6LKmqA";
+const admin = 5189048174;
 
 btn.addEventListener("click", () => {
     nav.classList.toggle("open");
@@ -45,6 +46,7 @@ const newText = function () {
             btnUser.style.display = 'flex';
             coins.style.display = 'flex';
             btnSteam.style.display = 'none';
+            numberCoins.textContent = localStorage.getItem('MoneyCSGO');
         } else {
             console.log("true");
         }
@@ -59,6 +61,7 @@ logout.addEventListener("click", () => {
     delete localStorage.NameCSGO;
     delete localStorage.LoginCSGO;
     delete localStorage.PasswordCSGO;
+    delete localStorage.MoneyCSGO;
     location.reload();
 })
 

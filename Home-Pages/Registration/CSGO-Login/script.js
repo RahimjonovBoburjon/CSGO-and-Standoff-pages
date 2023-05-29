@@ -40,6 +40,7 @@ const validateForm2 = function () {
         localStorage.setItem('NameCSGO', nameform2.value);
         localStorage.setItem('LoginCSGO', emailform2.value);
         localStorage.setItem('PasswordCSGO', passwordform2.value);
+        localStorage.setItem('MoneyCSGO', "0");
         function openPage() {
             window.location.href = '../../CSGO-Skins';
         };
