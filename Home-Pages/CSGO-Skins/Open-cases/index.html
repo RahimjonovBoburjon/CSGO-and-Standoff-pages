@@ -3,12 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Case name</title>
+  <title>Gamma Case</title>
   <link rel="stylesheet" href="./style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="header">
+    <div class="sign">
+      <b>CS:GO</b>
+    </div>
+
+    <div class="block">
+      <button class="coin">Баланс: <b class="money">0</b> 💰</button>
+    </div>
+  </div>
+
+  <h1 class="title">Gamma Case</h1>
+
   <div id='container'>
     <div class='overlay'></div>
     <div class='slider-wrapper'>
@@ -16,12 +32,13 @@
     <div class='middle'></div>
 
   </div>
-  <div class="button" id='btn'>10 </div>
+  <div class="button money-btn"z>10 🟡</div>
+  <div class="button opener" id='btn'>OPEN</div>
+  <p class="subtitle">У вас недостаточно монет</p>
 
   <div class='layout'></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src="./script.js"></script>
-
 </body>
 
 </html>

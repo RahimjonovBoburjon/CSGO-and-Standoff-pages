@@ -87,7 +87,6 @@ video {
     vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -140,7 +139,7 @@ body {
     line-height: 85px;
     color: #fff;
     margin: 0 auto;
-    margin-top: 150px;
+    margin-top: 100px;
     width: 250px;
     height: 85px;
     background: linear-gradient(#1d7751, #0e382c);
@@ -193,6 +192,7 @@ body {
     margin: 20px auto;
     border-radius: 20px;
     overflow: hidden;
+    margin-top: 80px;
 }
 
 .slider-wrapper {
@@ -220,7 +220,7 @@ body {
     height: 200px;
     background: rgb(155, 96, 2);
     position: absolute;
-    top: 20px;
+    top: 290px;
     margin-left: 400px;
     box-shadow: 0px 0px 20px 2px black;
 }
@@ -247,7 +247,7 @@ span {
 }
 
 .layout {
-    width: 25%;
+    width: 80%;
     height: 200px;
     margin: 0 auto
 }
@@ -276,4 +276,99 @@ span {
 a {
     color: #EEEEEE;
     font-size: 40px;
+}
+
+.block {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #fff;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.coin:hover {
+    cursor: pointer;
+}
+
+.coin {
+    font-family: var(--font-sans);
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+/* neon */
+
+.sign {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.sign b {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+    color: #c6e2ff;
+    -webkit-animation: neon 0.08s ease-in-out infinite alternate;
+    animation: neon 0.08s ease-in-out infinite alternate;
+}
+
+/*-- Animation Keyframes --*/
+@-webkit-keyframes neon {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+    }
+
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
+    }
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+    }
+
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
+    }
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000758;
+    border-bottom: 1px solid #0317fc;
+}
+
+.title {
+    font-family: 'Mochiy Pop One';
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    text-shadow: #FC0 1px 0 10px;
+    padding-top: 60px;
+}
+
+.subtitle {
+    display: none;
+    text-align: center;
+    color: red;
+    font-family: 'Rajdhani', sans-serif;
+    padding-top: 2px;
+}
+
+.money-btn {
+    display: block;
+}
+
+.opener {
+    display: none;
 }

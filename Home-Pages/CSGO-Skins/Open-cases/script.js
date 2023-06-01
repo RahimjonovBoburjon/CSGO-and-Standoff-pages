@@ -1,3 +1,51 @@
+const numberCoins = document.querySelector(".money");
+const coin = document.querySelector(".coin");
+// OPENER BUTTON
+const subtitle = document.querySelector(".subtitle");
+const moneyBtn = document.querySelector(".money-btn");
+const opener = document.querySelector(".opener");
+
+function money() {
+    numberCoins.textContent = localStorage.getItem('MoneyCSGO');
+};
+money();
+
+coin.addEventListener("click", () => {
+    function coin() {
+        window.location.href = '../money-shop/';
+    }
+    coin()
+})
+
+moneyBtn.addEventListener("click", () => {
+    if (localStorage.getItem('MoneyCSGO') >= "10") {
+        localStorage.setItem("54601", "true");
+        const number = Number(localStorage.getItem('MoneyCSGO')) - 10;
+        localStorage.setItem('MoneyCSGO', number);
+        location.reload();
+    } else {
+        localStorage.setItem("54601", "false");
+        subtitle.style.display = "block";
+    };
+});
+
+function validate() {
+    if (localStorage.getItem("54601") === "true") {
+        moneyBtn.style.display = "none";
+        opener.style.display = "block";
+        subtitle.style.display = "none";
+    } else {
+        moneyBtn.style.display = "block";
+        opener.style.display = "none";
+    };
+};
+
+validate()
+
+opener.addEventListener("click", () => {
+    localStorage.setItem("54601", "false");
+})
+
 $(function () {
     var rendertime = 0;
     $('#btn').on('click', function () {
@@ -8,7 +56,7 @@ $(function () {
         var count = 0;
         var speed = 50;
         $('.overlay').css('display', 'none');
-        $('#btn').css('display', 'none');
+        opener.style.display = "none";
         var timer = setInterval(function () {
 
             right += speed
@@ -43,7 +91,7 @@ $(function () {
                 clearInterval(timer)
                 rendertime++
 
-                $('#btn').css('display', 'block');
+                moneyBtn.style.display = "block";
                 var copy = $.clone($('.swiper-slide')[50])
                 $('.layout').append(copy)
             }
@@ -86,7 +134,7 @@ function render() {
             $('.slider-wrapper').append(blue)
         }
         console.log(num)
-        
+
     }
     console.log('finish render')
 }
