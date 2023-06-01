@@ -8,6 +8,7 @@ const btnUser = document.querySelector(".btn-15");
 const title = document.querySelector(".new-text");
 const logout = document.querySelector(".logout");
 const coins = document.querySelector(".block-list");
+const shop = document.querySelector(".shop-list");
 const numberCoins = document.querySelector(".link-coin");
 // Send Messege
 const userName = document.querySelector(".name");
@@ -45,6 +46,7 @@ const newText = function () {
             title.textContent = localStorage.getItem('NameCSGO');
             btnUser.style.display = 'flex';
             coins.style.display = 'flex';
+            shop.style.display = 'flex';
             btnSteam.style.display = 'none';
             numberCoins.textContent = localStorage.getItem('MoneyCSGO');
         } else {
@@ -61,7 +63,7 @@ logout.addEventListener("click", () => {
     delete localStorage.NameCSGO;
     delete localStorage.LoginCSGO;
     delete localStorage.PasswordCSGO;
-    delete localStorage.MoneyCSGO;
+    delete localStorage.MoneyCSGO   ;
     location.reload();
 })
 
@@ -81,4 +83,4 @@ sendMessege.addEventListener("click", async (e) => {
         console.log(error);
     }
 
-})
+})  
