@@ -4,6 +4,9 @@ const coin = document.querySelector(".coin");
 const subtitle = document.querySelector(".subtitle");
 const moneyBtn = document.querySelector(".money-btn");
 const opener = document.querySelector(".opener");
+// BTN
+const btnTrue = document.querySelector(".btnTrue");
+const btnCoin = document.querySelector(".btnCoin");
 
 function money() {
     numberCoins.textContent = localStorage.getItem('MoneyCSGO');
@@ -14,7 +17,11 @@ coin.addEventListener("click", () => {
     function coin() {
         window.location.href = '../money-shop/';
     }
-    coin()
+    if (localStorage.getItem('MoneyCSGO').length > 0) {
+        coin()
+    } else {
+        return false
+    }
 })
 
 moneyBtn.addEventListener("click", () => {
@@ -45,6 +52,10 @@ validate()
 opener.addEventListener("click", () => {
     localStorage.setItem("54601", "false");
 })
+
+function pages() {
+    window.location.href = '#open-modal';
+}
 
 $(function () {
     var rendertime = 0;
@@ -92,8 +103,11 @@ $(function () {
                 rendertime++
 
                 moneyBtn.style.display = "block";
-                var copy = $.clone($('.swiper-slide')[50])
-                $('.layout').append(copy)
+
+                pages()
+
+                var copy = $.clone($('.swiper-slides')[50])
+                $('.return').append(copy)
             }
         }, 20)
     })
@@ -101,13 +115,13 @@ $(function () {
 })
 
 
-var gold = `<div class="swiper-slide "> <span class='gold'>gold</span></div>` // 0.1%
-var red = `  <div class="swiper-slide"> <span class='red'>red</span></div>`    // 4.10%
-var darkpurple = `<div class="swiper-slide "> <span class='dark-purple'>darkpurple</span></div>` // 10.01%
-var purple1 = `<div class="swiper-slide "> <span class='purple'>1purple</span></div>`   // 18.05%
-var purple2 = `<div class="swiper-slide"> <span class='purple'>2purple</span></div>`      // 18.01%
-var purple3 = ` <div class="swiper-slide"> <span class='purple'>3purple</span></div>`   //18.06%
-var blue = `<div class="swiper-slide "><span class='blue'>blue</span></div>` //   31.9%
+var gold = `<div class="swiper-slides "><img src="images/1111.webp" class="Icon2"> <span class='card gold'>★ Flip Knife | Freehand</span></div>` // 0.01%
+var red = `<div class="swiper-slides"><img src="images/2222.webp" class="Icon2"> <span class='card red'>M4A4 | Desolate Space</span></div>`    // 2.10%
+var darkpurple = `<div class="swiper-slides "><img src="images/3333.webp" class="Icon2"> <span class='card dark-purple'>AWP | Phobos</span></div>` // 10.01%
+var purple1 = `<div class="swiper-slides "><img src="images/4444.webp" class="Icon2"> <span class='card purple'>AUG | Aristocrat</span></div>`   // 12.02%
+var purple2 = `<div class="swiper-slides"><img src="images/5555.webp" class="Icon2"> <span class='card purple'>Sawed-Off | Limelight</span></div>`      // 18.01%
+var purple3 = ` <div class="swiper-slides"><img src="images/6666.webp" class="Icon2"> <span class='card purple'>Five-SeveN | Violent Daimyo</span></div`   //25.06%
+var blue = `<div class="swiper-slides "><img src="images/7777.webp" class="Icon2"> <span class='card blue'>PP-Bizon | Harvester</span></div> ` //   44.08%
 
 
 
@@ -118,19 +132,19 @@ function render() {
     for (var i = 0; i < 60; i++) {
 
         var num = random();
-        if (num == 1) {
+        if (num == 0.1) {
             $('.slider-wrapper').append(gold)
-        } else if (num >= 2 && num <= 5) {
+        } else if (num >= 1 && num <= 3) {
             $('.slider-wrapper').append(red)
-        } else if (num >= 6 && num <= 15) {
+        } else if (num >= 4 && num <= 10) {
             $('.slider-wrapper').append(darkpurple)
-        } else if (num >= 16 && num <= 33) {
+        } else if (num >= 11 && num <= 25) {
             $('.slider-wrapper').append(purple1)
-        } else if (num >= 34 && num <= 51) {
+        } else if (num >= 26 && num <= 38) {
             $('.slider-wrapper').append(purple2)
-        } else if (num >= 52 && num <= 69) {
+        } else if (num >= 39 && num <= 49) {
             $('.slider-wrapper').append(purple3)
-        } else if (num >= 70 && num <= 100) {
+        } else if (num >= 50 && num <= 100) {
             $('.slider-wrapper').append(blue)
         }
         console.log(num)
@@ -142,3 +156,27 @@ function render() {
 function random() {
     return parseInt((Math.random() * 100) + 1)
 }
+
+// BTN
+btnTrue.addEventListener("click", () => {
+    function btnOpen() {
+        window.location.href = '#';
+    }
+    btnOpen()
+})
+
+btnCoin.addEventListener("click", () => {
+    function btnOpen() {
+        window.location.href = '#';
+    }
+    btnOpen()
+    if (localStorage.getItem('MoneyCSGO') >= "5") {
+        localStorage.setItem("54601", "true");
+        const number = Number(localStorage.getItem('MoneyCSGO')) - 5;
+        localStorage.setItem('MoneyCSGO', number);
+        location.reload();
+    } else {
+        localStorage.setItem("54601", "false");
+        subtitle.style.display = "block";
+    };
+})
