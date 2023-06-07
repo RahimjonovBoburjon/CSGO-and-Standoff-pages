@@ -170,7 +170,7 @@ btnCoin.addEventListener("click", () => {
         window.location.href = '#';
     }
     btnOpen()
-    if (localStorage.getItem('MoneyCSGO') >= "5") {
+    if (localStorage.getItem('MoneyCSGO') >= 5) {
         localStorage.setItem("54601", "true");
         const number = Number(localStorage.getItem('MoneyCSGO')) - 5;
         localStorage.setItem('MoneyCSGO', number);
